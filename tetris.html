@@ -1,0 +1,66 @@
+<html >
+<head>
+	<title>俄羅斯方塊</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="public/css/tetris.css">	
+	<script src="/socket.io/socket.io.js" type="text/javascript"></script>
+	<script type="text/javascript" src="public/js/jquery.min.js"></script>
+	<script type="text/javascript" src="public/js/tetris.js"></script>
+	<script type="text/javascript" src="public/js/tetris.control.js"></script>
+	<script type="text/javascript">
+       $(document).ready(function() {
+        var t = getTetris();
+        var socket = io.connect("yasuna.no-ip.org:1234");
+ 		socket.on("get_response", function (b) {
+
+                    var combine = b.key + "_" + b.act;
+                    var shape = t.shape;
+                    console.log(combine);
+                    
+                    switch (combine){
+                    	
+                        case b.key+"_space":
+							if( shape.canFall() )
+								shape.goToBot();
+								break;
+						case b.key+"_left":
+							if( shape.canLeft() )
+								shape.left();
+								break;
+						case b.key+"_rotate":
+							shape.rotate();
+							break;
+						case b.key+"_right":
+							if( shape.canRight() )
+							shape.right();
+							break;
+						case b.key+"_down":
+							if( shape.canFall() )
+							shape.fall();
+							break;
+						default:
+							break;
+                    }
+            });
+      });       
+        
+	</script>
+</head>
+<body >
+	<div id="info">
+		<div id="control">
+			<p>請利用手機來操作</p>
+		    <div id="preview"></div> &nbsp;
+			<b>LEVEL:</b> <span id="level">1</span> &nbsp;
+			<b>LINES:</b> <span id="lines">0</span> &nbsp;
+			<b>SCORE:</b> <span id="score">0</span><br />
+			<input type="button" id="go" value="start" class="button" />
+			<input type="button" id="pause" value="Pause" class="button" disabled="disabled" />
+			<input type="button" id="grid" value="Hide grids" class="button" />
+			<input type="button" id="shadow" value="Hide shadow" class="button" disabled="disabled" />
+		</div>
+	</div>
+	<div id="wrapper"></div>
+	<div id="debug"></div>
+</body>
+</html>

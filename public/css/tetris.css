@@ -1,0 +1,33 @@
+	   *{ font-size:12px; margin:0; padding:0; }
+		.button{ border:1px solid #000; width:85px; }
+		#level{ color:#00f; }
+		#lines{ color:#f0f; }
+		#score{ color:#f00; }
+		#control{ width:500px; margin-left:auto; margin-right:auto; text-align:center; line-height:22px; }
+		#info{ background-color: #87cefa; margin-bottom:6px; padding:8px; }
+		#wrapper{ width:220px; height:440px; margin-left:auto; margin-right:auto; display:block; border:3px solid #000; }
+		#preview{ width:40px; height:40px; display:block; border: 2px solid #777; float:left; background-color:#fff; }
+		#preview span{ width:8px; height:8px; border:1px solid #ddd; display:block; position:relative; float:left; }
+		.squareGrid{ width:20px; height:20px; border:1px solid #ddd; display:block; position:relative; float:left; }
+		.squareNoGrid{ width:20px; height:20px; display:block; border:1px solid #fff; position:relative; float:left; }
+		.seq0{ background-color:#f00; }
+		.seq1{ background-color:#02cc02; }
+		.seq2{ background-color:#00f; }
+		.seq3{ background-color:#c9c902; }
+		.seq4{ background-color:#f0f; }
+		.seq5{ background-color:#02b7b7; }
+		.seq6{ background-color:#000; }
+		.seq7{ background-color:#008; }
+		.seq8{ background-color:#800; }
+		.seq9{ background-color:#080; }
+		.seq10{ background-color:#880; }
+		.seq11{ background-color:#088; }
+		.seq12{ background-color:#808; }
+		.seq13{ background-color:#9932cc; }
+		.seq14{ background-color:#ff69b4; }
+		.seq15{ background-color:#3cb371; }
+		.seq16{ background-color:#008080; }
+		.seq17{ background-color:#800080; }
+		.seq18{ background-color:#808000; }
+		.shadow{ background-color:#bbb; }
+	}
