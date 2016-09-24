@@ -10,7 +10,7 @@
 	<script type="text/javascript">
        $(document).ready(function() {
         var t = getTetris();
-        var socket = io.connect("yasuna.no-ip.org:1234");
+        var socket = io.connect("192.168.0.100:1234");
  		socket.on("get_response", function (b) {
 
                     var combine = b.key + "_" + b.act;
@@ -46,7 +46,7 @@
         
 	</script>
 </head>
-<body >
+<body onload="getTetris().gameStart(); this.blur();">
 	<div id="info">
 		<div id="control">
 			<p>請利用手機來操作</p>

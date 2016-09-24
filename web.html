@@ -15,10 +15,10 @@
          $(document).ready(function(){
                 var key = NewGuid();
                 console.log(key);
-                $("#qrcode").append("<img src='http://chart.apis.google.com/chart?chs=300x300&cht=qr&chl=http://yasuna.no-ip.org:1234/remote/?key=" + key + "&choe=UTF-8' />");
+                $("#qrcode").append("<img src='http://chart.apis.google.com/chart?chs=300x300&cht=qr&chl=http://192.168.0.100:1234/remote/?key=" + key + "&choe=UTF-8' />");
  
                 // NodeJS Server
-                var nodejs_server = "yasuna.no-ip.org:1234";
+                var nodejs_server = "192.168.0.100:1234";
  
                 // 進行 connect
                 var socket = io.connect(nodejs_server);
@@ -33,14 +33,8 @@
  
                         // 當擁有特定 KEY 的使用者打開手機版網頁，觸發 enter 事件，就會將 qrcode 隱藏，並開啟遊戲連結
                             case key + "_enter":
-                            setTimeout(function () {
- 
-                                $("#qrcode").hide();
-                                $("#main").show();
- 
-                            }, 500);
-                                
-                    
+                            document.location.href="tetris";
+                            
                             break;
  
                         }

@@ -8,7 +8,7 @@
     <script type="text/javascript" >
     $(document).ready(function() 
         {
-            var socket = io.connect("yasuna.no-ip.org:1234");
+            var socket = io.connect("192.168.0.100:1234");
             "undefined" != typeof console && console.log("user enter via mobile");
              
             "undefined" != typeof console && console.log("enter mobile page");     
@@ -73,23 +73,24 @@
     }
     </script>
     <style>
-        
-          button {
-                 width: 15%;
-                 margin: 20px;
-                  height: 100%;
+              body{
+                 margin: 0;
+                 padding: 0;
+              }
+              button {
+                 width: 24%;
+                 margin: 0;
+                 padding: 0;
+                 height: 50%;
               }
     </style>
-
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 </head>
 <body>
-
 <p>與網頁互動ＤＥＭＯ</p>
- 
-    <button id="left"  >←</button>
+    <button id="left" >←</button>
     <button id="down" >↓</button>
     <button id="right" >→</button>
-   <button id="rotate" >rotate</button>
-   
+    <button id="rotate">轉向</button>
 </body>
 </html>
